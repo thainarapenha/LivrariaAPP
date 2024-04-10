@@ -1,5 +1,7 @@
 import { ContainerBook, ContainerInfo, DescriptionBook, ImageBook, PriceBook, TitleBook } from "./styles";
 
+// definimos que esse componente possui essas caracteristicas
+// definidas nessa interface, ou seja, é um molde.
 interface ICardBook {
   image: string;
   title: String;
@@ -7,12 +9,10 @@ interface ICardBook {
   price: string;
 }
 
-export const CardBook:React.FC<ICardBook> = ({
-  image,
-  title,
-  description,
-  price
-}) => {
+// passamos essas caracteristicas para nosso componente
+// e tornamos nossos campos genericos para receber as
+// informações dos livros
+export const CardBook:React.FC<ICardBook> = ({ image, title, description, price }) => {
   return (
     <ContainerBook>
       <ImageBook
@@ -32,7 +32,6 @@ export const CardBook:React.FC<ICardBook> = ({
           R$ {price}
         </PriceBook>
       </ContainerInfo>
-
     </ContainerBook>
   );
 }

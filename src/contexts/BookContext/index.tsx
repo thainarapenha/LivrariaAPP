@@ -17,12 +17,18 @@ export const BookProvider: React.FC<IBookProps> = ({ children }) => {
   const [Book, setBook] = useState<IBook[]>([]);
 
   useEffect(() => {
+    // faço com que essa função de pegar livros
+    // execute assim que inicializo o app
     GetBook();
   }, []);
 
   async function GetBook() {
     try {
+      // busca na pasta services a função responsável por
+      // requisitar informações na API (api.get('/livros'))
       const allBook = await GetAllBook();
+      
+      // adiciono o retorno da API para meu estado (state)
       setBook(allBook);
     } catch (error) {
       

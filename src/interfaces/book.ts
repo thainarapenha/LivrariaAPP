@@ -1,3 +1,4 @@
+// modelo do que é esperado receber da API
 export interface IBook {
   id_livro: number;
   titulo: string;

@@ -1,6 +1,7 @@
 import styled from "styled-components/native";
 
-
+// exporto o estilo de uma tag personalizada com as caracteristicas
+// herdadas da tag original da linguagem
 export const ContainerBook = styled.View`
   width: 150px;
   height: 370px;

@@ -2,7 +2,7 @@ import styled from "styled-components/native";
 
 // exporto o estilo de uma tag personalizada com as caracteristicas
 // herdadas da tag original da linguagem
-export const ContainerBook = styled.View`
+export const ContainerBook = styled.TouchableOpacity`
   width: 150px;
   height: 370px;
   align-items: center;
@@ -32,4 +32,11 @@ export const ContainerInfo = styled.View`
   margin: 5%;
   height: 150px;
   justify-content: space-between;
+`;
+export const ButtonBook = styled.TouchableOpacity`
+  margin: 2% 0;
+  padding: 3% 0;
+  border-radius: 4px;
+  align-items: center;
+  background-color: ${({theme}) => theme.COLORS.YELLOW};
 `;

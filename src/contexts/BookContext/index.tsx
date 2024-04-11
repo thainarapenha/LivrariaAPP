@@ -27,11 +27,14 @@ export const BookProvider: React.FC<IBookProps> = ({ children }) => {
       // busca na pasta services a função responsável por
       // requisitar informações na API (api.get('/livros'))
       const allBook = await GetAllBook();
-      
+
       // adiciono o retorno da API para meu estado (state)
       setBook(allBook);
     } catch (error) {
-      
+      // lembre-se que este não é um jeito correto para fazer
+      // tratamento de erro. Como expliquei anteriormente, queriamos ver
+      // se acontecia algo. Fica como sugestão, pesquisar mais sobre esse tópico.
+      console.log("erro no BookContext" + error);
     }
   }
 

@@ -13,8 +13,7 @@ export default function App() {
   });
 
   return (
-    // envolvo a aplicação com o contexto criado para gerenciar
-    // as informações dos livros
+    // envolvo a aplicação com o contexto criado para gerenciar as informações dos livros
     <BookProvider>
       <ThemeProvider theme={theme} >
         <StatusBar

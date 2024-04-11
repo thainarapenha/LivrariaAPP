@@ -6,3 +6,10 @@ export const Container = styled.View`
   justify-content: center;
   background-color: ${({ theme }) => theme.COLORS.WHITE};
 `;
+export const Title = styled.Text`
+  margin: 15% 0 5% 5%;
+  font-size: ${({theme}) => theme.FONT_SIZE.XL};
+  font-family: ${({theme}) => theme.FONT_FAMILY.BOLD};
+`;
+export const ScrollContainer = styled.ScrollView`
+`;

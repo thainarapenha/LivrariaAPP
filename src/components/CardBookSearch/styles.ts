@@ -1,24 +1,26 @@
 import styled from "styled-components/native";
 
 export const ContainerBook = styled.TouchableOpacity`
-  width: 150px;
-  height: 370px;
-  margin: 0 5px;
+  width: 95%;
+  height: 170px;
+  margin: 5px 0;
+  padding: 0 1%;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-around;
   border-radius: 4px;
   border-width: 2px;
   border-color: ${({ theme }) => theme.COLORS.GRAY_100};
   background-color: ${({ theme }) => theme.COLORS.WHITE};
 `;
 export const ImageBook = styled.Image`
-  width: 95%;
-  height: 200px;
-  margin-top: 3%;
+  width: 30%;
+  height: 150px;
   border-radius: 4px;
 `;
 export const ContainerInfo = styled.View`
+  width: 65%;
   height: 150px;
-  margin: 5%;
   justify-content: space-between;
 `;
 export const TitleBook = styled.Text`
@@ -30,6 +32,7 @@ export const DescriptionBook = styled.Text`
   font-family: ${({ theme }) => theme.FONT_FAMILY.REGULAR};
 `;
 export const PriceBook = styled.Text`
+  margin: 3% 0;
   font-size: ${({ theme }) => theme.FONT_SIZE.SSM};
   font-family: ${({ theme }) => theme.FONT_FAMILY.BOLD};
 `;

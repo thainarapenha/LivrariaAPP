@@ -1,11 +1,11 @@
 import { api } from "./api";
 
-export async function GetAllBook() {
+export async function GetAllBooks() {
   try {
     const response = await api.get('/livros');
-    console.log("O que API retornou: ", response.data);
-    return(response.data);
+    // console.log("console livros: ", response.data);
+    return response.data;
   } catch (error) {
-    console.log("erro no service book" + error);
+    console.log("erro no service de books" + error);
   }
 }

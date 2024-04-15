@@ -1,10 +1,15 @@
-import { IBook } from "@interfaces/book";
-import { GetAllBook } from "@services/book";
-import React, { createContext, useState, Dispatch, SetStateAction, useEffect } from "react";
+import { IBook } from "@interfaces/books";
+import { GetAllBooks } from "@services/book";
+import React, { createContext, useEffect, useState } from "react";
 
 interface IBookContext {
   Book: IBook[];
-  setBook: Dispatch<SetStateAction<IBook[]>>;
+  setBook: React.Dispatch<React.SetStateAction<IBook[]>>
+  input: string;
+  setInput: React.Dispatch<React.SetStateAction<string>>
+  itemSearch: string;
+  setItemSearch: React.Dispatch<React.SetStateAction<string>>
+  getBook(): Promise<void>;
 }
 
 export const BookContext = createContext<IBookContext>({} as IBookContext);
@@ -13,27 +18,31 @@ type IBookProps = {
   children: JSX.Element;
 }
 
-export const BookProvider: React.FC<IBookProps> = ({ children }) => {
+export function BookProvider({ children }: IBookProps) {
   const [Book, setBook] = useState<IBook[]>([]);
+  const [input, setInput] = useState<string>('');
+  const [itemSearch, setItemSearch] = useState<string>('');
 
   useEffect(() => {
-    GetBook();
+    setTimeout(() => {
+      getBook();
+    }, 3000);
   }, []);
 
-  async function GetBook() {
+  async function getBook() {
     try {
-      const allBook = await GetAllBook();
-      setBook(allBook);
+      const allBooks = await GetAllBooks();
+      setBook(allBooks);
     } catch (error) {
-      console.log("erro no BookContext" + error);
+      console.log("Erro ao tentar consultar no BookContext")
     }
   }
 
   return (
     <BookContext.Provider
-      value={{ Book, setBook }}
+      value={{ Book, itemSearch, input, setBook, setItemSearch, setInput, getBook }}
     >
       {children}
     </BookContext.Provider>
-  )
+  );
 }

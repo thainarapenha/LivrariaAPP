@@ -6,17 +6,11 @@ import { Container, ScrollContainer, Title } from "./styles";
 import { useNavigation } from "@react-navigation/native";
 
 export const Home = () => {
-  // busco dentro do contexto os dados que foram salvos no state
   const { Book } = useContext(BookContext);
 
-  // declaração necessária para fazermos a navegação entre telas
   const navigation = useNavigation();
 
   const NavigationPages = () => {
-    // navegação simples para troca de tela na aplicação
-    // Obs: Para ver os detalhes do livro clicado em uma nova tela, você deve identifica-ló através do id e
-    // depois realizar a troca de tela. Fica como sugestão pesquisar sobre o uso do context e
-    // passagem de parametros
     navigation.navigate('Details');
   }
 
@@ -26,13 +20,10 @@ export const Home = () => {
       <ScrollContainer>
         <Title>Auto Ajuda</Title>
 
-        {/* Componente responsável por deixar nosso card "rolável" em tela */}
         <FlatList
           data={Book.slice(0, 5)}
           keyExtractor={(item: any) => item.id_livro}
           renderItem={({ item }) => (
-            // renderiza todos os livros dentro do component criado
-            // passando as propriedades esperadas na interface
             <CardBook
               image={item.url_img}
               title={item.titulo}

@@ -1,6 +1,5 @@
 import styled from "styled-components/native";
 
-// segue a mesma lógica que os demais arquivos de estilo
 export const ContainerBook = styled.View`
 `;
 export const ImageDetails = styled.Image`

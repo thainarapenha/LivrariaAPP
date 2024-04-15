@@ -1,6 +1,5 @@
 import { ContainerBook, ContainerInfo, Description, ImageDetails, Price, TitleBook } from "./styles";
 
-// segue a mesma lógica do CardBook
 interface ICardBook {
   image: string;
   title: String;

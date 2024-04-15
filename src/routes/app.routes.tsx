@@ -11,9 +11,6 @@ function AppRoutes() {
         name="Home"
         component={Home}
       />
-      {/* sempre que criar uma nova tela, deve-se
-      adicionar uma nova Screen indicando a tela criada.
-      lembre-se de adiciona-lá também na pasta types */}
       <Screen
         name="Details"
         component={Details}

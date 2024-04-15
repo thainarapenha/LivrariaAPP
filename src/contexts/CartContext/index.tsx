@@ -16,17 +16,6 @@ type ICartProps = {
 export function CartProvider({ children }: ICartProps) {
   const [CartBook, setCartBook] = useState<IBook[]>([]);
 
-  // async function getCartBook(id: number) {
-  //   try {
-  //     const allCart = await GetCart(id);
-  //     if(allCart != undefined){
-  //       setCartBook(allCart);
-  //     }
-  //   } catch (error) {
-  //     console.log("Erro ao tentar consultar no CartContext")
-  //   }
-  // }
-
   return (
     <CartContext.Provider
       value={{ CartBook, setCartBook, getCartBook }}

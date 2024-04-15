@@ -16,7 +16,6 @@ export const Home = () => {
   const { Book, input, setInput, setItemSearch } = useContext(BookContext);
   const { getDetailsBook } = useContext(DetailsContext);
 
-
   const navigateDetailsPage = (id: number) => {
     getDetailsBook(id);
     navigation.navigate("Details");
